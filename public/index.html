@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Deepgram Badge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <div id="app">
+    <main>
+      <section id="transcribe" v-if="settings.mode == 'transcribe'">
+        <div v-if="!settings.transcription" class="selection">
+          <h2>Select a transcription mode</h2>
+          <button @click="beginTranscription('single')">Wearer-only</button>
+          <button @click="beginTranscription('group')">Group transcription</button>
+        </div>
+        <div v-if="settings.transcription == 'single'">
+          <p>{{singleTranscript}}</p>
+        </div>
+        <div v-if="settings.transcription == 'group'">
+          <p>
+              <span v-for="item in groupTranscript" :class="`speaker${item.speaker}`">{{item.word}} </span>
+          </p>
+        </div>
+      </section>
+      <section v-if="settings.mode == 'translate'" id="translate">
+        <div v-if="!settings.translation" class="selection">
+          <h2>Select a target language</h2>
+          <div class="buttons">
+            <button v-for="lang in languages" @click="beginTranslation(lang.code)">{{ lang.label }}</button>
+          </div>
+        </div>
+        <div v-if="settings.translation">
+          <p :style="{ direction: textDirection }">{{ translatedTranscript }}</p>
+        </div>
+      </section>
+      <section v-if="settings.mode == 'badge'" id="badge" >
+
+        <!-- UPDATE PERSONAL INFORMATION HERE -->
+        <h1>Kevin Lewis (he/him)</h1>
+        <h2>Senior Developer Advocate, Deepgram</h2>
+        <h2>@_phzn on Twitter</h2>
+        <!-- DO NOT EDIT AFTER HERE -->
+
+      </section>
+    </main>
+    <aside>
+      <ul>
+        <li :class="{ active: this.settings.mode == 'transcribe' }" @click="navigateTo('transcribe')">
+          <img src="/img/transcribe.svg" alt="">
+          <small>Transcribe</small>
+        </li>
+        <li :class="{ active: this.settings.mode == 'translate' }" @click="navigateTo('translate')">
+          <img src="/img/translate.svg" alt="">
+          <small>Translate</small>
+        </li>
+        <li :class="{ active: this.settings.mode == 'badge' }" @click="navigateTo('badge')">
+            <img src="/img/badge.svg" alt="">
+          <small>Badge</small>
+        </li>
+      </ul>
+      <a href="https://developers.deepgram.com">
+        <img src="/img/deepgram.svg" alt="DG">
+      </a>
+    </aside>
+  </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/languages.js"></script>
+    <script src="/script.js"></script>
+  </body>
+</html>

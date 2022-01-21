@@ -1,0 +1,33 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+::-webkit-scrollbar { display: none; }
+
+body { background: #141E29; color: white; font-family: 'Cairo', sans-serif; width: 100vw; }
+#app { display: flex; height: 100vh; }
+
+main { flex: 1; padding-right: calc(100px + 2em); padding-left: 1em; }
+aside { background: #4F6278; width: 100px; display: flex; flex-direction: column; justify-content: space-between; position: fixed; top: 0; right: 0; height: 100vh; }
+aside li { list-style: none; padding: 1em; }
+aside li img { width: 3em; margin: 0 auto; display: block; }
+aside li.active { background: #1E2C3C }
+aside li small { width: 100%; display: block; text-align: center; }
+aside > a { margin-top: auto; padding: 0.5em 1em; }
+
+#transcribe .selection { margin-left: 1em; margin-right: 0.5em; padding-bottom: 2em; }
+#transcribe h2 { font-size: 3em; margin-top: 0.25em; }
+#transcribe button { font-size: 2em; padding: 0.5em; display: block; width: 100%; margin-top: 1em; background: #38EDAC; color: #141E29; border: none; font-family: inherit; }
+#transcribe p { padding: 1rem; font-size: 5em; line-height: 1.25em; }
+#transcribe .speaker0 { color: white; }
+#transcribe .speaker1 { color: hotpink; }
+#transcribe .speaker2 { color: greenyellow; }
+#transcribe .speaker3 { color: yellow; }
+
+#translate .selection { margin-left: 1em; margin-right: 0.5em; }
+#translate h2 { font-size: 3em; margin-top: 0.25em; }
+#translate .buttons { display: grid; grid-template-columns: 1fr 1fr; grid-gap: 1.5em; margin-top: 2em; padding-bottom: 2em; }
+#translate button { font-size: 2em; padding: 0.5em; display: block; background: #38EDAC; color: #141E29; border: none; font-family: inherit; }
+#translate p { padding: 1rem; font-size: 5em; line-height: 1.25em; }
+
+#badge { padding: 1em 2em; }
+#badge h1 { font-size: 4em; }
+#badge h2 { font-size: 2.5em; }
+#badge h2 + h2 { margin-top: 1rem; }
