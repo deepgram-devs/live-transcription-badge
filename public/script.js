@@ -62,7 +62,7 @@ const app = new Vue({
       setInterval(() => { window.scrollTo(0, document.body.scrollHeight) }, 10)
       
       // Sets up WebSocket connection to Deepgram
-      this.socket = new WebSocket('wss://api.deepgram.com/v1/listen?punctuate=true&diarize=true', ['token', key])
+      this.socket = new WebSocket('wss://api.deepgram.com/v1/listen?punctuate=true&diarize=true&interim_results=true', ['token', key])
       
       // Start sending data every 1/4 of a second
       this.socket.onopen = () => {
