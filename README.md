@@ -35,6 +35,7 @@ Rename `.env.example` to `.env`, populate with your keys from step 1, and run th
 
 ## Questions?
 
-- [@DeepgramDevs on Twitter](https://twitter.com/DeepgramDevs)
+- Post your question in our [Community Forum](https://github.com/orgs/deepgram/discussions/categories/q-a)
+- [@DeepgramAI on Twitter](https://twitter.com/DeepgramAI)
 - [@_phzn on Twitter](https://twitter.com/_phzn)
 - [devrel@deepgram.com](mailto:devrel@deepgram.com)
