@@ -31,7 +31,7 @@ cd live-transcription-badge
 npm install
 ```
 
-Rename `.env.example` to `.env`, popualte with your keys from step 1, and run the project with `npm start`.
+Rename `.env.example` to `.env`, populate with your keys from step 1, and run the project with `npm start`.
 
 ## Questions?
 
